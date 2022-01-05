@@ -1,5 +1,3 @@
-import pkg from 'lodash'
-const { isEmpty } = pkg
 
 export default class TreeTool {
   constructor (tree) {

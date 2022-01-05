@@ -6,7 +6,10 @@
     row-key="id"
     border
     default-expand-all
-    :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
+    @select-all="selectAll"
+    @select="select"
+    :tree-props="{children: 'children'}"
+    ref="tableTree"
   >
     <el-table-column
       type="selection"
@@ -78,58 +81,75 @@ import treeTool from '@/utils/treeTool'
       this.myTree = new treeTool(this.tableData)
     },
     methods: {
+      change(){
+        this.myTree.eachTree(node=>{
+          if(this.selected.has(node.id)){
+            node.isDisabled = true
+            this.$refs.tableTree.toggleRowSelection(node, true);
+          }else{
+            node.isDisabled = false
+            this.$refs.tableTree.toggleRowSelection(node, false);
+          }
+        })
+        this.tableData = this.myTree.getTree()
+      },
      // 添加所有节点id到set中
       addNodes (arr) {
         arr.forEach(element => {
-          this.this.selected.add(element)
+          this.selected.add(element)
         })
       },
       // 添加所有节点id到set中
       deleteNodes (arr) {
         arr.forEach(element => {
-          this.this.selected.delete(element)
+          this.selected.delete(element)
         })
       },
       // select 方法
-      select (nodes) {
-        const node = nodes[0]
-        const childNodes = this.myTree.getTreeIds(this.myTree.getTreeNode(node.id))
-        if(this.selected.has(node)){
-          // 添加自己
-          this.selected.add(node.id)
-          // 添加所有子集
+      select (nodes,row) {
+        const childNodes = this.myTree.getTreeIds(this.myTree.getTreeNode(row.id))
+        // 判断是添加还是删除
+        if(row.isDisabled){
+          // 删除自己
+          this.selected.delete(row.id)
+          // 删除所有子集
           this.deleteNodes(childNodes)
         }else{
           // 添加自己
-          this.selected.add(node.id)
+          this.selected.add(row.id)
           // 添加所有子集
           this.addNodes(childNodes)
         }
         // 判断父级是否需要被选中
-        this.selectParent(node.id)
+        this.selectParent(row.id)
+        this.change()
       },
-
       selectAll () {
         if (isEqual(this.selected, new Set(this.myTree.getTreeIds(this.myTree.getTree())))) {
           this.selected = new Set()
         } else {
           this.selected = new Set(this.myTree.getTreeIds(this.myTree.getTree()))
         }
+        console.log(this.selected,"selectAll")
+        this.change()
       },
       // 判断父级是否需要选中
       selectParent (id) {
+        const that = this
         // 获取所有路径
-        const parentNodes = this.myTree.findPath(node => node.id === id)
+        const parentNodes = that.myTree.findPath(node => node.id === id)
         if (parentNodes) {
           parentNodes.forEach((ele) => {
             // 子集ids
-            const ids = this.myTree.getTreeIds(this.myTree.getTreeNode(ele.id))
+            const ids = that.myTree.getTreeIds(that.myTree.getTreeNode(ele.id))
             if (!isEmpty(ids)) {
               const allInSelect = ids.every(id => {
-                return this.selected.has(id)
+                return that.selected.has(id)
               })
               if (allInSelect) {
-                this.selected.add(ele.id)
+                that.selected.add(ele.id)
+              }else{
+                that.selected.delete(ele.id)
               }
             }
           })

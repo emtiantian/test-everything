@@ -2,22 +2,21 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <ElInput></ElInput>
-    <MyTitle title="测试123456" emphasize="123"></MyTitle>
+    <!-- <ElInput></ElInput>
+    <MyTitle title="测试123456" emphasize="123"></MyTitle> -->
     <ElTableTree></ElTableTree>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import ElInput from "./components/ElInput.vue"
-import MyTitle from "./components/MyTitle.vue"
-import ElTableTree from './components/ElTableTree.vue'
+// import ElInput from "./components/ElInput.vue"
+// import MyTitle from "./components/MyTitle.vue"
+import ElTableTree from './components/elTableTree'
 export default {
   name: 'App',
   components: {
-    ElInput,
-    MyTitle,
+    // ElInput,
+    // MyTitle,
     ElTableTree
   },
 }
