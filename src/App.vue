@@ -4,6 +4,7 @@
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <ElInput></ElInput>
     <MyTitle title="测试123456" emphasize="123"></MyTitle>
+    <ElTableTree></ElTableTree>
   </div>
 </template>
 
@@ -11,14 +12,14 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import ElInput from "./components/ElInput.vue"
 import MyTitle from "./components/MyTitle.vue"
+import ElTableTree from './components/ElTableTree.vue'
 export default {
   name: 'App',
   components: {
     ElInput,
     MyTitle,
-    // HelloWorld
+    ElTableTree
   },
-  
 }
 </script>
 
