@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.15.6",
+    "flv.js": "^1.6.2",
     "lodash": "^4.17.21",
     "vue": "^2.6.11"
   },
