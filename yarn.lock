@@ -14,7 +14,7 @@
   "resolved" "http://10.0.53.132/artifactory/api/npm/npm/@babel/compat-data/-/compat-data-7.16.4.tgz"
   "version" "7.16.4"
 
-"@babel/core@*", "@babel/core@^7.0.0", "@babel/core@^7.0.0-0", "@babel/core@^7.11.0", "@babel/core@^7.12.0", "@babel/core@^7.13.0", "@babel/core@^7.4.0-0":
+"@babel/core@^7.0.0", "@babel/core@^7.0.0-0", "@babel/core@^7.11.0", "@babel/core@^7.12.0", "@babel/core@^7.13.0", "@babel/core@^7.4.0-0":
   "integrity" "sha1-xP9EBG9f4xBSXMnrTvUUfwxTdNQ="
   "resolved" "http://10.0.53.132/artifactory/api/npm/npm/@babel/core/-/core-7.16.0.tgz"
   "version" "7.16.0"
@@ -2741,7 +2741,7 @@
   "resolved" "http://10.0.53.132/artifactory/api/npm/npm/core-js/-/core-js-2.6.12.tgz"
   "version" "2.6.12"
 
-"core-js@^3", "core-js@^3.6.5":
+"core-js@^3.6.5":
   "integrity" "sha1-9vFzyuI+c6fYj6I7bp2jKSdsZkE="
   "resolved" "http://10.0.53.132/artifactory/api/npm/npm/core-js/-/core-js-3.19.1.tgz"
   "version" "3.19.1"
@@ -3483,6 +3483,11 @@
     "is-date-object" "^1.0.1"
     "is-symbol" "^1.0.2"
 
+"es6-promise@^4.2.8":
+  "integrity" "sha1-TrIVlMlyvEBVPSduUQU5FD21Pgo="
+  "resolved" "http://10.0.53.132/artifactory/api/npm/npm/es6-promise/-/es6-promise-4.2.8.tgz"
+  "version" "4.2.8"
+
 "escalade@^3.1.1":
   "integrity" "sha1-2M/ccACWXFoBdLSoLqpcBVJ0LkA="
   "resolved" "http://10.0.53.132/artifactory/api/npm/npm/escalade/-/escalade-3.1.1.tgz"
@@ -4000,6 +4005,14 @@
   dependencies:
     "inherits" "^2.0.3"
     "readable-stream" "^2.3.6"
+
+"flv.js@^1.6.2":
+  "integrity" "sha1-+jNA/j9+4B05d/eHau5muENuWSI="
+  "resolved" "http://10.0.53.132/artifactory/api/npm/npm/flv.js/-/flv.js-1.6.2.tgz"
+  "version" "1.6.2"
+  dependencies:
+    "es6-promise" "^4.2.8"
+    "webworkify-webpack" "^2.1.5"
 
 "follow-redirects@^1.0.0":
   "integrity" "sha1-8JpYSJgdPHcrU5Iwl3hSP42Fw4E="
@@ -8542,6 +8555,11 @@
   "integrity" "sha1-f4RzvIOd/YdgituV1+sHUhFXikI="
   "resolved" "http://10.0.53.132/artifactory/api/npm/npm/websocket-extensions/-/websocket-extensions-0.1.4.tgz"
   "version" "0.1.4"
+
+"webworkify-webpack@^2.1.5":
+  "integrity" "sha1-v0M2YkwGJsvoXPH/3hV/eqkLHRw="
+  "resolved" "http://10.0.53.132/artifactory/api/npm/npm/webworkify-webpack/-/webworkify-webpack-2.1.5.tgz"
+  "version" "2.1.5"
 
 "which-boxed-primitive@^1.0.2":
   "integrity" "sha1-E3V7yJsgmwSf5dhkMOIc9AqJqOY="

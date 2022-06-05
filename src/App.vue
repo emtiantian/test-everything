@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" src="./assets/logo.png" />
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <!-- <ElInput></ElInput>
     <MyTitle title="测试123456" emphasize="123"></MyTitle> -->
+    <FlvTest></FlvTest>
     <ElTableTree></ElTableTree>
   </div>
 </template>
@@ -11,15 +12,17 @@
 <script>
 // import ElInput from "./components/ElInput.vue"
 // import MyTitle from "./components/MyTitle.vue"
-import ElTableTree from './components/elTableTree'
+import ElTableTree from "./components/elTableTree";
+import FlvTest from "./views/flvTest/index.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     // ElInput,
     // MyTitle,
-    ElTableTree
+    ElTableTree,
+    FlvTest,
   },
-}
+};
 </script>
 
 <style>
