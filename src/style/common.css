@@ -1,0 +1,7 @@
+/* 与html一样但是可以定义全局变量 */
+:root, body{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
